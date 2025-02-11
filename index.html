@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishav Kumar Raj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- Resume Button for Desktop -->
+        <li class="resume-button"><a target="_blank"
+            href="https://drive.google.com/uc?export=download&id=YOUR_RESUME_FILE_ID" download>Resume</a></li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+      <button id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <button id="close-menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!-- Resume Button for Mobile -->
+      <li><a target="_blank" href="https://drive.google.com/uc?export=download&id=YOUR_RESUME_FILE_ID"
+          download>Resume</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <h1>Rishav Kumar</h1>
+      <p class="dynamic-tagline">Building seamless digital experiences</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+    <div class="scroll-down">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="profile-frame">
+        <img src="assets/rishav.jpeg" alt="Profile Picture" class="profile-pic">
+      </div>
+      <p>Hi, I'm Rishav Kumar Raj, a tech enthusiast crafting intelligent solutions at the intersection of data, design,
+        and innovation ☕.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <p>HTML</p>
+        <div class="progress-bar"><span style="width: 90%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-css3-alt"></i>
+        <p>CSS</p>
+        <div class="progress-bar"><span style="width: 85%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-js"></i>
+        <p>JavaScript</p>
+        <div class="progress-bar"><span style="width: 80%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <p>SQL</p>
+        <div class="progress-bar"><span style="width: 75%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-file-excel"></i>
+        <p>Excel</p>
+        <div class="progress-bar"><span style="width: 85%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-chart-pie"></i>
+        <p>Power BI</p>
+        <div class="progress-bar"><span style="width: 75%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-python"></i>
+        <p>Python</p>
+        <div class="progress-bar"><span style="width: 80%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-chart-line"></i>
+        <p>Matplotlib</p>
+        <div class="progress-bar"><span style="width: 70%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-brain"></i>
+        <p>TensorFlow</p>
+        <div class="progress-bar"><span style="width: 70%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-git"></i>
+        <p>Git</p>
+        <div class="progress-bar"><span style="width: 85%;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="assets/employee.jpg" alt="Project 1">
+        <h3>Employee Database Management System - SAIL Bokaro</h3>
+        <p>Developed a comprehensive PostgreSQL database system for employee data management and payroll analytics.</p>
+        <button class="view-details"><a target="_blank" href="https://github.com/Risha-v/SAIL_INTERNSHIP"
+            style="text-decoration: none; color: inherit;">View Repo</a></button>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/portfolio.jpg" alt="Project 3">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website showcasing my skills and projects.</p>
+        <button class="view-details"><a target="_blank" href="https://github.com/Risha-v/PORTFOLIO"
+            style="text-decoration: none; color: inherit;">View Repo</a></button>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Software Engineer </h3>
+        <p>Bokaro Steel Plant · Dec 2024 - Jan 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Bachelor of Technology in Computer Science</h3>
+        <p>Birla Institute of Technology, Mesra · 2022 - 2026</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Intermediate</h3>
+        <p>S.K.P Vidya Vihar, Deoghar · 2020 - 2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificates-grid">
+      <!-- SAIL Bokora Certificate -->
+      <div class="certificate-card">
+        <h3>Vocational Training Completion</h3>
+        <p>Issued by: SAIL Bokaro Steel Plant</p>
+        <button class="view-certificate">
+          <a target="_blank" href="https://drive.google.com/file/d/1IKKPtJ8QQi2vTG9rJ0nwE1rUOxgB3n66/view?usp=drive_link"
+            style="text-decoration: none; color: inherit;">View Certificate</a>
+        </button>
+        <a target="_blank" href="https://drive.google.com/uc?export=download&id=1BIGOP4fvz5BnrPCTjiLQNS92pmLNph02" download
+          class="download-certificate">
+          <i class="fas fa-download"></i> Download Certificate
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Modal -->
+  <div id="certificate-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-image" src="" alt="Certificate">
+      <h3 id="modal-title"></h3>
+      <p id="modal-issuer"></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" class="email-protect" placeholder="Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-icons">
+      <a target="_blank" href="https://www.linkedin.com/in/contactrishavkumar"><i class="fab fa-linkedin"></i></a>
+      <a target="_blank" href="https://github.com/Risha-v "><i class="fab fa-github"></i></a>
+      <a target="_blank" href="mailto:connectwithme.rishav@gmail.com" aria-label="Email"><i
+          class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rishav Kumar Raj. All rights reserved.</p>
+    <a href="#hero" class="back-to-top">↑ Back to Top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
