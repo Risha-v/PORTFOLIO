@@ -487,11 +487,26 @@ footer {
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
+    position: relative;
+    right: 0;
   }
 
-  .mobile-menu {
-    width: 50%;
+  .menu-toggle i {
+    font-size: 24px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Center hero content for mobile */
+  .hero-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 1rem;
   }
 
   .hero-content h1 {
@@ -501,13 +516,22 @@ footer {
   .dynamic-tagline {
     font-size: 1.2rem;
   }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .about-content,
+  .skills-grid,
+  .projects-grid,
+  .timeline,
+  .certificates-grid,
+  #contact-form {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .mobile-menu {
-    width: 100%;
-  }
-
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -516,7 +540,7 @@ footer {
     font-size: 1rem;
   }
 
-  section {
-    padding: 3rem 1rem;
+  .menu-toggle {
+    padding: 0.5rem;
   }
 }
