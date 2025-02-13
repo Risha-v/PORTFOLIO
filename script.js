@@ -178,7 +178,6 @@ function initBackToTopButton() {
     });
 }
 
-// Enhanced Mobile Menu with Gestures
 function initMobileMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -187,10 +186,18 @@ function initMobileMenu() {
     let touchEndX = 0;
 
     function toggleMenu(show) {
-        mobileMenu.style.transform = show ? 'translateX(0)' : 'translateX(100%)';
-        document.body.style.overflow = show ? 'hidden' : '';
+        if (show) {
+            mobileMenu.classList.add('active');
+            mobileMenu.style.transform = 'translateX(0)';
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.remove('active');
+            mobileMenu.style.transform = 'translateX(100%)';
+            document.body.style.overflow = '';
+        }
     }
 
+    // Toggle button handlers
     menuToggle.addEventListener('click', () => toggleMenu(true));
     closeMenu.addEventListener('click', () => toggleMenu(false));
 
@@ -204,22 +211,32 @@ function initMobileMenu() {
         const deltaX = touchEndX - touchStartX;
         
         if (deltaX > 0) {
+            e.preventDefault(); // Prevent default only when swiping right
             mobileMenu.style.transform = `translateX(${deltaX}px)`;
         }
-    }, { passive: true });
+    }, { passive: false });
 
     mobileMenu.addEventListener('touchend', () => {
         const deltaX = touchEndX - touchStartX;
         if (deltaX > 100) {
             toggleMenu(false);
         } else {
-            mobileMenu.style.transform = '';
+            mobileMenu.style.transform = 'translateX(0)';
         }
     });
 
     // Close menu on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('active') && 
+            !mobileMenu.contains(e.target) && 
+            e.target !== menuToggle) {
+            toggleMenu(false);
+        }
     });
 }
 
