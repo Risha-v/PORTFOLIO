@@ -489,7 +489,7 @@ footer {
   .menu-toggle {
     display: flex;
     position: relative;
-    right: 0;
+    right: 1em;
   }
 
   .menu-toggle i {
@@ -532,15 +532,30 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    right: 1rem; /* Adjusted for smaller screens */
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
   .hero-content h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .dynamic-tagline {
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .menu-toggle {
-    padding: 0.5rem;
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
