@@ -1,259 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rishav Kumar Raj</title>
+  <meta name="description" content="Rishav Kumar Raj - Software Engineer Portfolio">
+  <meta name="keywords" content="software engineer, web developer, portfolio, Rishav Kumar Raj">
+  <title>Rishav Kumar Raj | Portfolio</title>
+  <!-- Preloading font to prevent layout shift -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <!-- External CSS Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
-
 <body>
-  <!-- Loader -->
+  <!-- Page Loader -->
   <div class="loader">
     <div class="spinner"></div>
   </div>
 
-  <nav>
+  <!-- Navigation -->
+  <nav id="navbar">
     <div class="nav-container">
+      <div class="logo">
+        <a href="#hero">R</a>
+      </div>
       <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <!-- Resume Button for Desktop -->
-        <li class="resume-button"><a target="_blank"
-            href="https://drive.google.com/uc?export=download&id=1ivAKuTO1r8xJ9zmDyXKLhiRHcSyQp8H1" download>Resume</a></li>
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="resume-button"><a href="https://drive.google.com/uc?export=download&id=1ivAKuTO1r8xJ9zmDyXKLhiRHcSyQp8H1" download target="_blank">Resume</a></li>
       </ul>
-      <button id="theme-toggle">🌙</button>
-      <button id="menu-toggle" class="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
+      <div class="nav-controls">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu">
-    <button id="close-menu">
+    <button id="close-menu" aria-label="Close menu">
       <i class="fas fa-times"></i>
     </button>
     <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <!-- Resume Button for Mobile -->
-      <li><a target="_blank" href="https://drive.google.com/uc?export=download&id=1ivAKuTO1r8xJ9zmDyXKLhiRHcSyQp8H1"
-          download>Resume</a></li>
+      <li><a href="#hero" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="https://drive.google.com/uc?export=download&id=1ivAKuTO1r8xJ9zmDyXKLhiRHcSyQp8H1" download target="_blank" class="mobile-link">Resume</a></li>
     </ul>
   </div>
 
   <!-- Hero Section -->
   <section id="hero">
     <div id="particles-js"></div>
-    <div class="hero-content">
-      <h1>Rishav Kumar</h1>
-      <p class="dynamic-tagline">Building seamless digital experiences</p>
-      <a href="#projects" class="cta-button">View My Work</a>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Rishav Kumar Raj</h1>
+      <div class="typewriter">
+        <p id="typewriter-text"></p>
+      </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="cta-button primary">View My Work</a>
+        <a href="#contact" class="cta-button secondary">Contact Me</a>
+      </div>
+      <div class="social-icons hero-social">
+        <a href="https://www.linkedin.com/in/contactrishavkumar" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Risha-v" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:connectwithme.rishav@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
     <div class="scroll-down">
-      <span></span>
+      <a href="#about"><span></span></a>
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="profile-frame">
-        <img src="assets/rishav.jpeg" alt="Profile Picture" class="profile-pic">
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <div class="about-content">
+        <div class="profile-container" data-aos="fade-right">
+          <div class="profile-frame">
+            <img src="assets/rishav.jpg" alt="Rishav Kumar Raj" class="profile-pic">
+          </div>
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <p>Hi, I'm <span class="highlight">Rishav Kumar Raj</span>, a tech enthusiast crafting intelligent solutions at the intersection of data, design, and innovation ☕.</p>
+          <p>I'm passionate about building seamless digital experiences and always exploring new technologies to solve complex problems.</p>
+          <p>Currently pursuing a Bachelor's degree in Computer Science at Birla Institute of Technology, Mesra, I focus on developing my skills in web development, data analytics, and machine learning.</p>
+          <div class="personal-info">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>connectwithme.rishav@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>B.Tech Computer Science (2022-2026)</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Jharkhand, India</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p>Hi, I'm Rishav Kumar Raj, a tech enthusiast crafting intelligent solutions at the intersection of data, design,
-        and innovation ☕.</p>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <i class="fab fa-html5"></i>
-        <p>HTML</p>
-        <div class="progress-bar"><span style="width: 90%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-css3-alt"></i>
-        <p>CSS</p>
-        <div class="progress-bar"><span style="width: 85%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-js"></i>
-        <p>JavaScript</p>
-        <div class="progress-bar"><span style="width: 80%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-database"></i>
-        <p>SQL</p>
-        <div class="progress-bar"><span style="width: 75%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-file-excel"></i>
-        <p>Excel</p>
-        <div class="progress-bar"><span style="width: 85%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-chart-pie"></i>
-        <p>Power BI</p>
-        <div class="progress-bar"><span style="width: 75%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-python"></i>
-        <p>Python</p>
-        <div class="progress-bar"><span style="width: 80%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-chart-line"></i>
-        <p>Matplotlib</p>
-        <div class="progress-bar"><span style="width: 70%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-brain"></i>
-        <p>TensorFlow</p>
-        <div class="progress-bar"><span style="width: 70%;"></span></div>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-git"></i>
-        <p>Git</p>
-        <div class="progress-bar"><span style="width: 85%;"></span></div>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fab fa-html5"></i>
+          <p>HTML</p>
+          <div class="progress-bar"><span style="width: 90%;"></span></div>
+          <span class="skill-level">90%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fab fa-css3-alt"></i>
+          <p>CSS</p>
+          <div class="progress-bar"><span style="width: 85%;"></span></div>
+          <span class="skill-level">85%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-js"></i>
+          <p>JavaScript</p>
+          <div class="progress-bar"><span style="width: 80%;"></span></div>
+          <span class="skill-level">80%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
+          <i class="fas fa-database"></i>
+          <p>SQL</p>
+          <div class="progress-bar"><span style="width: 75%;"></span></div>
+          <span class="skill-level">75%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-file-excel"></i>
+          <p>Excel</p>
+          <div class="progress-bar"><span style="width: 85%;"></span></div>
+          <span class="skill-level">85%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
+          <i class="fas fa-chart-pie"></i>
+          <p>Power BI</p>
+          <div class="progress-bar"><span style="width: 75%;"></span></div>
+          <span class="skill-level">75%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fab fa-python"></i>
+          <p>Python</p>
+          <div class="progress-bar"><span style="width: 80%;"></span></div>
+          <span class="skill-level">80%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="450">
+          <i class="fas fa-chart-line"></i>
+          <p>Matplotlib</p>
+          <div class="progress-bar"><span style="width: 70%;"></span></div>
+          <span class="skill-level">70%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fas fa-brain"></i>
+          <p>TensorFlow</p>
+          <div class="progress-bar"><span style="width: 70%;"></span></div>
+          <span class="skill-level">70%</span>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="550">
+          <i class="fab fa-git"></i>
+          <p>Git</p>
+          <div class="progress-bar"><span style="width: 85%;"></span></div>
+          <span class="skill-level">85%</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- ACO Pathfinding Project (New) -->
-      <div class="project-card">
-        <img src="assets/pathfinding.jpg" alt="ACO Pathfinding Algorithm">
-        <h3>ACO Pathfinding Algorithm</h3>
-        <p>An implementation of Ant Colony Optimization for pathfinding in 2D grids with obstacles, featuring backtracking and hybrid approaches.</p>
-        <button class="view-details"><a target="_blank" href="https://github.com/Risha-v/ACO-Pathfinding"
-            style="text-decoration: none; color: inherit;">View Repo</a></button>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="algorithms">Algorithms</button>
+        <button class="filter-btn" data-filter="data">Database</button>
+        <button class="filter-btn" data-filter="web">Web</button>
       </div>
-
-      <div class="project-card">
-        <img src="assets/employee.jpg" alt="Project 1">
-        <h3>Employee Database Management System - SAIL Bokaro</h3>
-        <p>Developed a comprehensive PostgreSQL database system for employee data management and payroll analytics.</p>
-        <button class="view-details"><a target="_blank" href="https://github.com/Risha-v/SAIL_INTERNSHIP"
-            style="text-decoration: none; color: inherit;">View Repo</a></button>
+      <div class="projects-grid">
+        <div class="project-card algorithms" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <img src="assets/aco_pathfinding.jpeg" alt="ACO Pathfinding Algorithm">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Risha-v/ACO-Pathfinding" target="_blank" aria-label="View code"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-details-btn" data-id="project1" aria-label="View details"><i class="fas fa-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>ACO Pathfinding Algorithm</h3>
+            <p>An implementation of Ant Colony Optimization for pathfinding in 2D grids with obstacles, featuring backtracking and hybrid approaches.</p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Algorithms</span>
+              <span>AI</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card data" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <img src="assets/employee.jpg" alt="Employee Database Management System">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Risha-v/SAIL_INTERNSHIP" target="_blank" aria-label="View code"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-details-btn" data-id="project2" aria-label="View details"><i class="fas fa-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Employee Database Management System - SAIL Bokaro</h3>
+            <p>Developed a comprehensive PostgreSQL database system for employee data management and payroll analytics.</p>
+            <div class="project-tech">
+              <span>PostgreSQL</span>
+              <span>Database</span>
+              <span>Analytics</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card web" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img">
+            <img src="assets/portfolio.jpg" alt="Portfolio Website">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Risha-v/PORTFOLIO" target="_blank" aria-label="View code"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-details-btn" data-id="project3" aria-label="View details"><i class="fas fa-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website showcasing my skills and projects.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="project-card">
-        <img src="assets/portfolio.jpg" alt="Project 3">
-        <h3>Portfolio Website</h3>
-        <p>A personal portfolio website showcasing my skills and projects.</p>
-        <button class="view-details"><a target="_blank" href="https://github.com/Risha-v/PORTFOLIO"
-            style="text-decoration: none; color: inherit;">View Repo</a></button>
-      </div>
-      
     </div>
   </section>
 
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div class="modal-image">
+        <img id="modal-img" src="" alt="Project Image">
+      </div>
+      <div class="modal-description">
+        <p id="modal-desc"></p>
+        <div class="modal-technologies" id="modal-tech"></div>
+        <div class="modal-links">
+          <a id="modal-github" href="#" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+          <a id="modal-live" href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Experience Section -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Software Engineer </h3>
-        <p>Bokaro Steel Plant · Dec 2024 - Jan 2025</p>
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Dec 2024 - Jan 2025</div>
+            <h3>Software Engineer</h3>
+            <h4>Bokaro Steel Plant</h4>
+            <p>Developed and maintained employee database management systems, implemented data analytics solutions, and created dashboard visualizations for payroll data.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Bachelor of Technology in Computer Science</h3>
-        <p>Birla Institute of Technology, Mesra · 2022 - 2026</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Intermediate</h3>
-        <p>S.K.P Vidya Vihar, Deoghar · 2020 - 2022</p>
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2022 - 2026</div>
+            <h3>Bachelor of Technology in Computer Science</h3>
+            <h4>Birla Institute of Technology, Mesra</h4>
+            <p>Currently pursuing a degree in Computer Science with focus on programming, algorithms, and data structures.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2020 - 2022</div>
+            <h3>Intermediate</h3>
+            <h4>S.K.P Vidya Vihar, Deoghar</h4>
+            <p>Completed intermediate education with focus on Mathematics and Science.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Certificates Section -->
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="certificates-grid">
-      <!-- SAIL Bokora Certificate -->
-      <div class="certificate-card">
-        <h3>Vocational Training Completion</h3>
-        <p>Issued by: SAIL Bokaro Steel Plant</p>
-        <button class="view-certificate">
-          <a target="_blank" href="https://drive.google.com/file/d/1IKKPtJ8QQi2vTG9rJ0nwE1rUOxgB3n66/view?usp=sharing"
-            style="text-decoration: none; color: inherit;">View Certificate</a>
-        </button>
-        <a target="_blank" href="https://drive.google.com/uc?export=download&id=1BIGOP4fvz5BnrPCTjiLQNS92pmLNph02" download
-          class="download-certificate">
-          <i class="fas fa-download"></i> Download Certificate
-        </a>
+  <section id="certificates" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Certificates</h2>
+      <div class="certificates-grid">
+        <div class="certificate-card" data-aos="fade-up">
+          <div class="certificate-content">
+            <h3>Vocational Training Completion</h3>
+            <p><i class="fas fa-award"></i> Issued by: SAIL Bokaro Steel Plant</p>
+            <div class="certificate-actions">
+              <a href="https://drive.google.com/file/d/1IKKPtJ8QQi2vTG9rJ0nwE1rUOxgB3n66/view?usp=sharing" target="_blank" class="certificate-btn view">View Certificate</a>
+              <a href="https://drive.google.com/uc?export=download&id=1BIGOP4fvz5BnrPCTjiLQNS92pmLNph02" download class="certificate-btn download">Download <i class="fas fa-download"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Certificate Modal -->
-  <div id="certificate-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <img id="modal-image" src="" alt="Certificate">
-      <h3 id="modal-title"></h3>
-      <p id="modal-issuer"></p>
-    </div>
-  </div>
-
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Name" required>
-      <input type="email" class="email-protect" placeholder="Email" required>
-      <input type="text" placeholder="Subject" required>
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="social-icons">
-      <a target="_blank" href="https://www.linkedin.com/in/contactrishavkumar"><i class="fab fa-linkedin"></i></a>
-      <a target="_blank" href="https://github.com/Risha-v "><i class="fab fa-github"></i></a>
-      <a target="_blank" href="mailto:connectwithme.rishav@gmail.com" aria-label="Email"><i
-          class="fas fa-envelope"></i></a>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>connectwithme.rishav@gmail.com</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Jharkhand, India</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Education</h3>
+            <p>BIT Mesra, Computer Science</p>
+          </div>
+          <div class="social-icons contact-social">
+            <a href="https://www.linkedin.com/in/contactrishavkumar" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Risha-v" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:connectwithme.rishav@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-container" data-aos="fade-left">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject" required>
+              <i class="fas fa-pencil-alt"></i>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              <i class="fas fa-comment-alt"></i>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rishav Kumar Raj. All rights reserved.</p>
-    <a href="#hero" class="back-to-top">↑ Back to Top</a>
+    <div class="footer-content">
+      <p>&copy; 2025 Rishav Kumar Raj. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Custom JavaScript -->
   <script src="script.js"></script>
 </body>
-
 </html>
