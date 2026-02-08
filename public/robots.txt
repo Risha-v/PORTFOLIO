@@ -1,0 +1,13 @@
+# Robots.txt for Rishav Portfolio
+# https://risha-v.github.io/PORTFOLIO/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://risha-v.github.io/PORTFOLIO/sitemap.xml
+
+# Crawl-delay to be nice to servers
+Crawl-delay: 1
+
+# Disallow (none - all pages are public)

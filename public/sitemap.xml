@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Routes use HashRouter, but canonical URLs omit the hash for cleaner SEO. -->
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/services</loc>
+  </url>
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/projects</loc>
+  </url>
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/feedback</loc>
+  </url>
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/about</loc>
+  </url>
+  <url>
+    <loc>https://risha-v.github.io/PORTFOLIO/contact</loc>
+  </url>
+</urlset>
+

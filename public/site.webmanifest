@@ -1,0 +1,27 @@
+{
+  "name": "Rishav Portfolio - Web Development & Data Analytics",
+  "short_name": "Rishav Portfolio",
+  "description": "Professional freelance web development and data analytics services",
+  "start_url": "/PORTFOLIO/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/PORTFOLIO/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/PORTFOLIO/public/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/PORTFOLIO/public/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

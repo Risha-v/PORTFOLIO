@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Allow real static files (Google verification, robots.txt, sitemap.xml)
+      if (
+        !location.pathname.endsWith('.html') &&
+        !location.pathname.endsWith('.xml') &&
+        !location.pathname.endsWith('.txt')
+      ) {
+        const redirect = location.pathname.replace('/PORTFOLIO', '')
+        location.replace('/PORTFOLIO/#' + redirect)
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
